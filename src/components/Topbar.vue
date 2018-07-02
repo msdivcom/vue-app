@@ -1,7 +1,7 @@
 <template>
     <div class="topbar">
         <div class="brand">
-            <router-link to="/">Logo</router-link>
+            <router-link to="/">Logo2</router-link>
         </div>
         <div class="nav">
             <navigation></navigation>
