@@ -33,12 +33,14 @@ export default {
   },
   methods: {
     fetchPage (slug) {
+      this.$Progress.start()
       let url = 'http://sandbox.komachi.pomzed.ch/wp/wp-json/wp/v2/pages?slug=' + slug
       this.$http.get(url).then(response => {
         // get body data
         this.page = response.body[0]
         // Stop loading animaiton
         this.load = false
+        this.$Progress.finish()
         document.title = this.page.title.rendered
 
         console.log('fetched page', this.page)

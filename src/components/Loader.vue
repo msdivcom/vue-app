@@ -65,7 +65,7 @@ export default {
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s;
     }
-    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    .fade-enter, .fade-leave-to {
         opacity: 0;
     }
 
@@ -74,7 +74,7 @@ export default {
         justify-content: center;
         align-items: center;
         background-color: rgba(17,178,138);
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
+        /*position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;*/
     }
 </style>
