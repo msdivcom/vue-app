@@ -4,7 +4,6 @@
 
             <div v-if="page.slug === 'menus-de-la-semaine'" class="page">
                 <div class="page-content" v-if="page.title">
-                    <img :src="page.acf.menu_image_header.url" alt="">
                     <h1 class="page-title">{{ page.title.rendered}}</h1>
                     <menu-listing :id="page.id"></menu-listing>
 
