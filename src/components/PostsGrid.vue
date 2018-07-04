@@ -60,10 +60,7 @@ export default {
     .posts-grid{
         margin-top: 2em;
     }
-    .page-content {
-        width: 80%;
-        margin: auto;
-    }
+
     .card{
         background-color: #11b28a;
         color: white;
