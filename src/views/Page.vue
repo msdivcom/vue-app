@@ -1,14 +1,30 @@
 <template>
-    <div class="page">
-       <div class="page-content" v-if="page.title">
-           <h1 class="page-title">{{ page.title.rendered}}</h1>
-           <div class="entry-content" v-html="page.content.rendered"></div>
-       </div>
+    <div class="site-content">
+            <loader v-if="load"></loader>
+
+            <div v-if="page.slug === 'menus-de-la-semaine'" class="page">
+                <div class="page-content" v-if="page.title">
+                    <h1 class="page-title">{{ page.title.rendered}}</h1>
+                    <menu-listing :id="page.id"></menu-listing>
+
+                </div>
+            </div>
+
+            <div v-else class="page">
+                <div class="page-content" v-if="page.title">
+                    <h1 class="page-title">{{ page.title.rendered}}</h1>
+                    <div class="entry-content" v-html="page.content.rendered"></div>
+                </div>
+            </div>
     </div>
 </template>
 <script>
+import Loader from '../components/Loader'
+import MenuListing from '../components/MenuListing'
+
 export default {
   name: 'Page',
+  components: {MenuListing, Loader},
   data () {
     return {
       load: true,
@@ -46,5 +62,10 @@ export default {
 }
 </script>
 <style>
+
+    .page-content {
+        width: 80%;
+        margin: auto;
+    }
 
 </style>

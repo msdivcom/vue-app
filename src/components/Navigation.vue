@@ -2,7 +2,7 @@
     <div class="navigation">
         <ul>
             <li v-for="item in items" :key="item.id">
-                <router-link :to="item.slug">{{ item.name }}</router-link>
+                <router-link :to="'/' + item.slug">{{ item.name }}</router-link>
             </li>
         </ul>
     </div>

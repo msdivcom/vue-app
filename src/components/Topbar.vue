@@ -19,7 +19,7 @@ export default {
 </script>
 <style>
     .topbar{
-        padding: 1em;
+        padding: 2em 1em;
         background-color: #2c3e50;
         color: white;
         display: flex;
@@ -29,5 +29,7 @@ export default {
     .topbar a,
     .topbar a:visited{
         color: white;
+        text-decoration: none;
+        font-size: 1.2em;
     }
 </style>

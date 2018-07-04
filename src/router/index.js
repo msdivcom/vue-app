@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home'
 import Page from '@/views/Page'
+import Post from '@/views/Post'
 
 Vue.use(Router)
 
@@ -17,6 +18,12 @@ export default new Router({
       path: '/:slug',
       name: 'Page',
       component: Page
+    },
+    {
+      path: '/posts/:slug',
+      name: 'Post',
+      component: Post
     }
+
   ]
 })

@@ -7,18 +7,24 @@
 
 <script>
 import Topbar from './components/Topbar'
+import Loader from './components/Loader'
 export default {
   name: 'App',
   components: {
-    Topbar
+    Topbar,
+    Loader
   }
 }
 </script>
 
 <style>
-  html,body{
+ html,body{
     margin: 0;
     padding: 0 ;
+  }
+  img{
+    width: 100%;
+    height: auto;
   }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
