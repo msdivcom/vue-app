@@ -3,6 +3,8 @@
             <div class="page">
                 <div class="page-content" >
                     <h1 class="page-title">{{ post.title.rendered}}</h1>
+
+                    <div v-html="post.content.rendered" class="entry-content"></div>
                 </div>
             </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="site-content">
-        <div class="page">
+        <div class="page" v-if="page.title">
             <div class="page-content">
                 <h1 class="page-title">{{ page.title.rendered}}</h1>
 
@@ -15,7 +15,7 @@
                 </div>
 
                 <!--template default-->
-                <div v-else class="template-menus-de-la-semaine">
+                <div v-else >
                     <div class="entry-content" v-html="page.content.rendered"></div>
                 </div>
 
