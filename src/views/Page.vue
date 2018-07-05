@@ -14,6 +14,17 @@
                     <contact-form></contact-form>
                 </div>
 
+                <!--template contact-->
+                <div v-if="page.slug === 'galerie'" class="">
+                    <lightbox
+                            id="mylightbox"
+                            :images="images"
+                            :image_class=" 'img-responsive img-rounded' "
+                            :album_class=" 'my-album-class' "
+                            :options="options">
+                    </lightbox>
+                </div>
+
                 <!--template default-->
                 <div v-else >
                     <div class="entry-content" v-html="page.content.rendered"></div>
@@ -27,14 +38,37 @@
 import Loader from '../components/Loader'
 import MenuListing from '../components/MenuListing'
 import ContactForm from '../components/ContactForm'
+import Lightbox from 'vue-simple-lightbox'
 
 export default {
   name: 'Page',
-  components: {ContactForm, MenuListing, Loader},
+  components: {ContactForm, MenuListing, Loader, Lightbox},
   data () {
     return {
       load: true,
-      page: []
+      page: [],
+      images: [
+        {
+          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img1.jpg',
+          title: 'Image 2'
+        },
+        {
+          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img2.jpg',
+          title: 'Image 3'
+        },
+        {
+          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img3.jpg',
+          title: ''
+        },
+        {
+          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img4.jpg',
+          title: ''
+        }
+      ],
+      options: {
+        closeText: 'X'
+      }
+
     }
   },
   methods: {
@@ -48,7 +82,6 @@ export default {
         this.load = false
         this.$Progress.finish()
         document.title = this.page.title.rendered
-
         console.log('fetched page', this.page)
       }, response => {
         console.log(response)
