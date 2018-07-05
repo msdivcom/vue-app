@@ -19,8 +19,8 @@
                     <lightbox
                             id="mylightbox"
                             :images="images"
-                            :image_class=" 'img-responsive img-rounded' "
-                            :album_class=" 'my-album-class' "
+                            :image_class=" 'img-galerie' "
+                            :album_class=" 'row' "
                             :options="options">
                     </lightbox>
                 </div>
@@ -53,17 +53,18 @@ export default {
           title: ''
         },
         {
-          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img2.jpg',
+          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img3.jpg',
+          title: ''
+        },
+        {
+          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img1.jpg',
           title: ''
         },
         {
           src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img3.jpg',
           title: ''
-        },
-        {
-          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img4.jpg',
-          title: ''
         }
+
       ],
       options: {
         closeText: 'X'
@@ -99,6 +100,16 @@ export default {
   created () {
     console.log('query', this.$route.params.slug)
     this.fetchPage(this.$route.params.slug)
+  },
+  updated () {
+    var imgs = document.getElementsByClassName('img-galerie')
+    console.log('imgs', imgs)
+    for (var i = 0; i < imgs.length; i++) {
+      console.log(imgs[i])
+      imgs[i].parentNode.classList.add('col-12')
+      imgs[i].parentNode.classList.add('col-md-6')
+      imgs[i].parentNode.classList.add('col-lg-4')
+    }
   }
 }
 </script>
@@ -111,5 +122,17 @@ export default {
     .sl-overlay{
         background-color: #11b28a !important;
         opacity: 1 !important;
+    }
+    .grid-galerie{
+
+    }
+    .my-gallery a img{
+      width: 100%;
+        height: auto;
+    }
+    .sl-wrapper .sl-close{
+        width: 30px;
+        height: 30px;
+        font-size: 2em;
     }
 </style>
