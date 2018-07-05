@@ -5,7 +5,6 @@
               <div class="card" :class="{ }">
                   <h2> {{ item.menu_day.label }} </h2>
                   <div class="menu-content" v-html="item.menu_content"> </div>
-                  <p>{{ item.menu_day.value + ' ' + today }}</p>
               </div>
             </div>
         </div>
