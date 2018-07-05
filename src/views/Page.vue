@@ -1,28 +1,36 @@
 <template>
     <div class="site-content">
-            <div v-if="page.slug === 'menus-de-la-semaine'" class="page">
-                <div class="page-content" v-if="page.title">
-                    <h1 class="page-title">{{ page.title.rendered}}</h1>
+        <div class="page">
+            <div class="page-content">
+                <h1 class="page-title">{{ page.title.rendered}}</h1>
+
+                <!--template menus-de-la-semaine-->
+                <div v-if="page.slug === 'menus-de-la-semaine'" class="template-menus-de-la-semaine">
                     <menu-listing :id="page.id"></menu-listing>
-
                 </div>
-            </div>
 
-            <div v-else class="page">
-                <div class="page-content" v-if="page.title">
-                    <h1 class="page-title">{{ page.title.rendered}}</h1>
+                <!--template contact-->
+                <div v-if="page.slug === 'contact'" class="template-menus-de-la-semaine">
+                    <contact-form></contact-form>
+                </div>
+
+                <!--template default-->
+                <div v-else class="template-menus-de-la-semaine">
                     <div class="entry-content" v-html="page.content.rendered"></div>
                 </div>
+
             </div>
+        </div>
     </div>
 </template>
 <script>
 import Loader from '../components/Loader'
 import MenuListing from '../components/MenuListing'
+import ContactForm from '../components/ContactForm'
 
 export default {
   name: 'Page',
-  components: {MenuListing, Loader},
+  components: {ContactForm, MenuListing, Loader},
   data () {
     return {
       load: true,

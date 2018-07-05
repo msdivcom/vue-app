@@ -51,11 +51,13 @@ export default {
 </script>
 
 <style>
-    .menu-card-content{
+    .menu-listing .card{
         background-color: #11b28a;
         color: white;
         padding: 1em;
         text-align: center;
+    }
+    .menu-listing .card{
         margin-bottom: 30px;
     }
 </style>
