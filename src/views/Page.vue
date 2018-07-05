@@ -108,7 +108,6 @@ export default {
         width: 80%;
         margin: auto;
     }
-
     .sl-overlay{
         background-color: #11b28a;
         opacity: 1;
