@@ -127,7 +127,7 @@ export default {
 
     }
     .my-gallery a img{
-      width: 100%;
+      width: 100% !important;
         height: auto;
     }
     .sl-wrapper .sl-close{
