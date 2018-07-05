@@ -50,11 +50,10 @@ export default {
 
 <style>
     .menu-listing .card{
+        background-color: white;
         border: 1px solid gainsboro;
         padding: 1em;
         text-align: center;
-    }
-    .menu-listing .card{
         margin-bottom: 30px;
     }
     .menu-listing .today .card{
