@@ -50,11 +50,11 @@ export default {
       images: [
         {
           src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img1.jpg',
-          title: 'Image 2'
+          title: ''
         },
         {
           src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img2.jpg',
-          title: 'Image 3'
+          title: ''
         },
         {
           src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img3.jpg',
@@ -109,4 +109,8 @@ export default {
         margin: auto;
     }
 
+    .sl-overlay{
+        background-color: #11b28a;
+        opacity: 1;
+    }
 </style>
