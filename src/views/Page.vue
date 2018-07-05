@@ -1,7 +1,5 @@
 <template>
     <div class="site-content">
-            <loader v-if="load"></loader>
-
             <div v-if="page.slug === 'menus-de-la-semaine'" class="page">
                 <div class="page-content" v-if="page.title">
                     <h1 class="page-title">{{ page.title.rendered}}</h1>

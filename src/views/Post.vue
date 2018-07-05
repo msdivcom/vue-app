@@ -1,14 +1,10 @@
 <template>
     <div class="site-content">
-        <transition name="fade">
-            <loader v-if="load"></loader>
-
-            <div v-else class="page">
+            <div class="page">
                 <div class="page-content" >
                     <h1 class="page-title">{{ post.title.rendered}}</h1>
                 </div>
             </div>
-        </transition>
     </div>
 </template>
 <script>
@@ -25,6 +21,7 @@ export default {
   },
   methods: {
     fetchPost (slug) {
+      this.$Progress.start()
       let url = 'http://sandbox.komachi.pomzed.ch/wp/wp-json/wp/v2/posts?slug=' + slug
       this.$http.get(url).then(response => {
         // get body data
@@ -32,7 +29,7 @@ export default {
         // Stop loading animaiton
         this.load = false
         document.title = this.post.title.rendered
-
+        this.$Progress.finish()
         console.log('fetched post single', this.post)
       }, response => {
         console.log(response)

@@ -8,7 +8,7 @@ Vue.use(Router)
 Vue.use(VueProgressBar, {
   color: 'rgb(17,178,138)',
   failedColor: 'red',
-  height: '2px'
+  thickness: '4px'
 })
 
 export default new Router({

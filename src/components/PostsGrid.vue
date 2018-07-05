@@ -1,8 +1,6 @@
 <template>
     <div class="site-content">
-
-            <loader v-if="load"></loader>
-            <div v-else class="container">
+            <div  class="container">
                 <div class="row posts-grid">
                     <div v-for="post in posts" :key="post.id" class="col-12 col-md-6 col-lg-4">
                         <router-link :to=" '/posts/' + post.slug">
@@ -30,12 +28,14 @@ export default {
   },
   methods: {
     fetchPosts (slug) {
+      this.$Progress.start()
       let url = 'http://sandbox.komachi.pomzed.ch/wp/wp-json/wp/v2/posts?_embed'
       this.$http.get(url).then(response => {
         // get body data
         this.posts = response.body
         // Stop loading animaiton
         this.load = false
+        this.$Progress.finish()
         console.log('fetched posts', this.post)
       }, response => {
         console.log(response)
