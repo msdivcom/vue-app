@@ -64,7 +64,7 @@ export default {
         width: 80%;
         margin: auto;
     }
-    .card{
+    .posts-grid .card{
         background-color: #11b28a;
         color: white;
         padding: 1em;
