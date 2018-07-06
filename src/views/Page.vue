@@ -47,25 +47,8 @@ export default {
     return {
       load: true,
       page: [],
-      images: [
-        {
-          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img1.jpg',
-          title: ''
-        },
-        {
-          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img3.jpg',
-          title: ''
-        },
-        {
-          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img1.jpg',
-          title: ''
-        },
-        {
-          src: 'https://cdn.rawgit.com/vrajroham/vrajroham.github.io/85d64ac5/imgs/img3.jpg',
-          title: ''
-        }
-
-      ],
+      galerie: [],
+      images: [],
       options: {
         closeText: 'X'
       }
@@ -79,11 +62,20 @@ export default {
       this.$http.get(url).then(response => {
         // get body data
         this.page = response.body[0]
+        if (this.page.slug === 'galerie') {
+          this.galerie = response.body[0].acf.galerie
+          for (let i = 0; i < this.galerie.length; i++) {
+            let row = {
+              src: this.galerie[i].url,
+              title: this.galerie[i].title
+            }
+            this.images.push(row)
+          }
+        }
         // Stop loading animaiton
         this.load = false
         this.$Progress.finish()
-        document.title = this.page.title.rendered
-        console.log('fetched page', this.page)
+        document.title = this.page.title.rendered + ' | ' + 'Komachi'
       }, response => {
         console.log(response)
         // error callback
@@ -98,14 +90,11 @@ export default {
     }
   },
   created () {
-    console.log('query', this.$route.params.slug)
     this.fetchPage(this.$route.params.slug)
   },
   updated () {
     var imgs = document.getElementsByClassName('img-galerie')
-    console.log('imgs', imgs)
     for (var i = 0; i < imgs.length; i++) {
-      console.log(imgs[i])
       imgs[i].parentNode.classList.add('col-12')
       imgs[i].parentNode.classList.add('col-md-6')
       imgs[i].parentNode.classList.add('col-lg-4')
@@ -120,11 +109,8 @@ export default {
         margin: auto;
     }
     .sl-overlay{
-        background-color: #11b28a !important;
+        background-color: rgba(0,0,0,0.88) !important;
         opacity: 1 !important;
-    }
-    .grid-galerie{
-
     }
     .my-gallery a img{
       width: 100% !important;
@@ -134,5 +120,9 @@ export default {
         width: 30px;
         height: 30px;
         font-size: 2em;
+        color: white;
+    }
+    .sl-wrapper .sl-navigation button{
+      color: white;
     }
 </style>

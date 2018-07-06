@@ -20,7 +20,17 @@ export default{
   },
   methods: {
     submitForm () {
-      alert('hello')
+      let url = 'http://localhost:8888/wpadmin/wp-json/pomzed/v1/sendmail'
+      this.$http.post(url, {
+        lastname: this.lastname,
+        firstname: this.firstname,
+        subject: this.subject,
+        message: this.message
+      }).then(response => {
+        console.log(response)
+      }, response => {
+        console.log(response)
+      })
     }
   }
 }

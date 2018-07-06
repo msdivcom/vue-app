@@ -39,6 +39,7 @@ export default {
         console.log('fetched posts', this.post)
       }, response => {
         console.log(response)
+        this.$Progress.fail()
         // error callback
       })
     }

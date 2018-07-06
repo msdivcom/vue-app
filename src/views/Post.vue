@@ -30,7 +30,7 @@ export default {
         this.post = response.body[0]
         // Stop loading animaiton
         this.load = false
-        document.title = this.post.title.rendered
+        document.title = this.post.title.rendered + ' | ' + 'Komachi'
         this.$Progress.finish()
         console.log('fetched post single', this.post)
       }, response => {
