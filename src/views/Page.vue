@@ -62,6 +62,7 @@ export default {
       this.$http.get(url).then(response => {
         // get body data
         this.page = response.body[0]
+        this.images.length = 0
         if (this.page.slug === 'galerie') {
           this.galerie = response.body[0].acf.galerie
           for (let i = 0; i < this.galerie.length; i++) {
@@ -69,6 +70,7 @@ export default {
               src: this.galerie[i].url,
               title: this.galerie[i].title
             }
+            console.log('push')
             this.images.push(row)
           }
         }
