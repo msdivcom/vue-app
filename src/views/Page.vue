@@ -114,15 +114,15 @@ export default {
     }
     .my-gallery a img{
       width: 100% !important;
-        height: auto;
+      height: auto;
     }
     .sl-wrapper .sl-close{
         width: 30px;
         height: 30px;
         font-size: 2em;
-        color: white;
+        color: white !important;
     }
     .sl-wrapper .sl-navigation button{
-      color: white;
+      color: white !important;
     }
 </style>

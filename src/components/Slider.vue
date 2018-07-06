@@ -35,7 +35,7 @@ export default {
 <style>
   .vueperslides__slide{
       background-position: center;
-      display: flex;
+      display: flex !important;
       justify-content: center;
       align-items: center;
       background-color: black;
@@ -48,7 +48,7 @@ export default {
       color: white;
   }
   .vueperslides__arrow{
-      background-color: white;
+      background-color: white !important;
   }
   .vueperslides__inner{
       background-color: rgba(0,0,0,0.8);
