@@ -34,7 +34,7 @@ export default {
 </script>
 <style>
   .vueperslides__slide{
-      background-position: center;
+      background-position: center !important;
       display: flex !important;
       justify-content: center;
       align-items: center;
