@@ -8,7 +8,9 @@
                 <div v-if="page.slug === 'menus-de-la-semaine'" class="template-menus-de-la-semaine">
                     <menu-listing :id="page.id"></menu-listing>
                 </div>
-
+                <div v-if="page.slug === 'notre-carte'" class="template-menus-de-la-semaine">
+                    <notre-carte-listing :id="page.id"></notre-carte-listing>
+                </div>
                 <!--template contact-->
                 <div v-if="page.slug === 'contact'" class="template-menus-de-la-semaine">
                     <contact-form></contact-form>
@@ -39,10 +41,11 @@ import Loader from '../components/Loader'
 import MenuListing from '../components/MenuListing'
 import ContactForm from '../components/ContactForm'
 import Lightbox from 'vue-simple-lightbox'
+import NotreCarteListing from '../components/NotreCarteListing'
 
 export default {
   name: 'Page',
-  components: {ContactForm, MenuListing, Loader, Lightbox},
+  components: {ContactForm, MenuListing, Loader, Lightbox, NotreCarteListing},
   data () {
     return {
       load: true,

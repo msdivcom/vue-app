@@ -7,6 +7,7 @@ import router from './router'
 
 Vue.use(VueResource)
 Vue.config.productionTip = false
+Vue.http.headers.common['Authorization'] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9zYW5kYm94LmtvbWFjaGkucG9temVkLmNoXC93cCIsImlhdCI6MTUzMTE0MDEzMSwibmJmIjoxNTMxMTQwMTMxLCJleHAiOjE1MzE3NDQ5MzEsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.15q33tmPivaNRdHI9x3OsEDyiWJJ8un9HkOLvub_ZBo'
 
 /* eslint-disable no-new */
 new Vue({
