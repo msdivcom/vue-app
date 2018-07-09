@@ -18,9 +18,7 @@ export default {
   methods: {
     fetchLinks () {
       let url = 'http://sandbox.komachi.pomzed.ch/wp/wp-json/pomzed/v1/navigation'
-      this.$http.get(url, {
-        headers: {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9zYW5kYm94LmtvbWFjaGkucG9temVkLmNoXC93cCIsImlhdCI6MTUzMTE0MTI5MywibmJmIjoxNTMxMTQxMjkzLCJleHAiOjE1MzE3NDYwOTMsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.VQfR8wKAYL2N9MJ0lJtqx9a-qHIpykf5EMFct64X79s'}
-      }).then(response => {
+      this.$http.get(url).then(response => {
         // get body data
         this.items = response.body.data
         console.log(response)
