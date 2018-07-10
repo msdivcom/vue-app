@@ -24,7 +24,7 @@ export default{
   },
   methods: {
     submitForm () {
-      let url = 'https://localhost:8888/wpadmin/wp-json/pomzed/v1/sendmail'
+      let url = 'https://sandbox.komachi.pomzed.ch/wp-json/pomzed/v1/sendmail'
       this.$http.post(url, {
         lastname: this.lastname,
         firstname: this.firstname,
