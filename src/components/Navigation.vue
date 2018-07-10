@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     fetchLinks () {
-      let url = 'http://sandbox.komachi.pomzed.ch/wp/wp-json/pomzed/v1/navigation'
+      let url = 'https://sandbox.komachi.pomzed.ch/wp/wp-json/pomzed/v1/navigation'
       this.$http.get(url).then(response => {
         // get body data
         this.items = response.body.data

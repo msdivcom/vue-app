@@ -29,7 +29,7 @@ export default {
   methods: {
     fetchPosts (slug) {
       this.$Progress.start()
-      let url = 'http://sandbox.komachi.pomzed.ch/wp/wp-json/wp/v2/posts?_embed'
+      let url = 'https://sandbox.komachi.pomzed.ch/wp/wp-json/wp/v2/posts?_embed'
       this.$http.get(url).then(response => {
         // get body data
         this.posts = response.body
