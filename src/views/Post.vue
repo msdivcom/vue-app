@@ -24,7 +24,7 @@ export default {
   methods: {
     fetchPost (slug) {
       this.$Progress.start()
-      let url = 'http://sandbox.komachi.pomzed.ch/wp/wp-json/wp/v2/posts?slug=' + slug
+      let url = 'https://sandbox.komachi.pomzed.ch/wp/wp-json/wp/v2/posts?slug=' + slug
       this.$http.get(url).then(response => {
         // get body data
         this.post = response.body[0]
