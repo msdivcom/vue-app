@@ -1,5 +1,8 @@
 <template>
     <div class="contact-form">
+        <div class="status" v-if="status">
+            <div class="message">{{ status }}</div>
+        </div>
         <input type="text" placeholder="Votre prénom" v-model="firstname">
         <input type="text" placeholder="Votre nom" v-model="lastname">
         <input type="text" placeholder="Sujet" v-model="subject">
@@ -15,21 +18,22 @@ export default{
       lastname: '',
       firstname: '',
       subject: '',
-      message: ''
+      message: '',
+      status: ''
     }
   },
   methods: {
     submitForm () {
-      let url = 'http://localhost:8888/wpadmin/wp-json/pomzed/v1/sendmail'
+      let url = 'https://localhost:8888/wpadmin/wp-json/pomzed/v1/sendmail'
       this.$http.post(url, {
         lastname: this.lastname,
         firstname: this.firstname,
         subject: this.subject,
         message: this.message
       }).then(response => {
-        console.log(response)
+        this.status = response.status
       }, response => {
-        console.log(response)
+        this.status = response.status
       })
     }
   }
