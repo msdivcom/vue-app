@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     fetchMenu (id) {
-      let url = 'http://sandbox.komachi.pomzed.ch/wp/wp-json/acf/v3/pages/' + id
+      let url = 'https://sandbox.komachi.pomzed.ch/wp/wp-json/acf/v3/pages/' + id
       this.$http.get(url).then(response => {
         // get body data
         this.menu = response.body.acf.notre_carte
