@@ -9,8 +9,17 @@
 import PostsGrid from '../components/PostsGrid'
 export default {
   name: 'Home',
+  data () {
+    return {
+      datetime: ''
+    }
+  },
   components: {
     PostsGrid
+  },
+  created () {
+    let currentdate = new Date()
+    this.datetime = currentdate.getHours() + ':' + currentdate.getMinutes() + ':' + currentdate.getSeconds()
   }
 }
 </script>

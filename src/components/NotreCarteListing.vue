@@ -1,16 +1,21 @@
 <template>
     <div class="notre-carte-listing">
       <div class="row">
-        <div v-for="(item, index) in menu" :key="index" class="col-12 col-md-6 col-lg-4">
+        <masonry
+        :cols="{default: 3, 1200: 2, 800: 1}"
+        :gutter="30"
+        >
+        <div v-for="(item, index) in menu" :key="index" class="">
             <div class="card">
               <h3 class="title">{{ item.carte_main_title }}</h3>
               <div v-for="(subitem, index) in item.carte_plats"  :key="index" class="item">
                 <p class="name">{{ subitem.carte_nom_plat }}</p>
                 <p  class="des" v-if="subitem.carte_des_plat">{{ subitem.carte_des_plat }}</p>
-                <p>***</p>
+                <p class="divider">***</p>
                </div>
             </div>
         </div>
+        </masonry>
       </div>
     </div>
 </template>
@@ -44,9 +49,11 @@ export default {
 </script>
 <style scoped>
   .card{
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-    padding: 1em;
+    /*border-bottom: 1px solid rgba(0,0,0,0.2);*/
+    padding: 2em;
     text-align: center;
+    background-color: rgb(208, 208, 208);
+    margin-bottom: 30px;
   }
   .card .name,
   .card .des{
@@ -56,6 +63,12 @@ export default {
   .card .title{
     color: #11b28a;
     font-size: 2em;
+  }
+  .card .item:last-child .divider{
+    display: none;
+  }
+  .card .item:last-child{
+    padding-bottom: 2em;
   }
   .card .name{
     color: black;
